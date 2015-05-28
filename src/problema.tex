@@ -1,16 +1,36 @@
  \section{Descripción del Problema}
 	
 \begin{frame}{Descripción del Problema}
-	\begin{block}{}
-	El desarrollador Android carece de herramientas para regular el flujo de
-	información en las aplicaciones que implementa.
+	\begin{block}{Manipulación de información del usuario}
+	El desarrollador Android no tiene cómo definir políticas de seguridad para
+	regular el flujo de información de sus aplicaciones.
 	\end{block}
-	
-	\begin{itemize}
-	  \item El desarrollador carece de herramientas que le garanticen la ausencia
-	  de flujos indeseados.
-	  \item Preocupación de seguridad: manipulación de información del usuario.
-	  \item 
-	\end{itemize}
-	
+	\pause
+	\begin{block}{ Reporte McAffe}
+		\begin{itemize}
+	  	\item Aplicaciones Android invasivas de la privacidad del usuario.
+	  	\item No toda aplicación invasiva contiene malware.
+	  	\item De las aplicaciones que más vulneran la privacidad del usuario 35 \%
+	  	contienen malware.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Descripción del Problema}
+	\begin{block}{Contramedidas existentes}
+		\begin{itemize}
+		  \item Políticas de control de acceso de la API.
+		  \item Data-Flow analysis mediante técnicas de análisis tainting.
+		   \item No buscan garantizar políticas de confidencialidad e integridad desde
+		   la implementación del aplicativo.
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{block}{Herramienta que se requiere}
+		\begin{itemize}
+		  \item Analizar el flujo de información del aplicativo.
+		  \item Garantizar políticas de confidencialidad e integridad desde la
+		  implementación.
+		\end{itemize}
+	\end{block}
 \end{frame}
