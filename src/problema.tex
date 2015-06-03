@@ -2,14 +2,16 @@
 	
 \begin{frame}{Descripción del Problema}
 	\begin{block}{Manipulación de información del usuario}
-	El desarrollador Android no tiene cómo definir políticas de seguridad para
-	regular el flujo de información de sus aplicaciones.\newline
-	Complejidad para prevenir fugas de información.
+	\begin{itemize}
+	  \item El desarrollador Android no tiene cómo definir políticas de seguridad para
+	regular el flujo de información de sus aplicaciones.
+	\item Complejidad para prevenir fugas de información del usuario.
+	\end{itemize}
 	\end{block}
 	\pause
 	\begin{block}{ Reporte McAffe}
 		\begin{itemize}
-	  	\item Aplicaciones Android invasivas.
+	  	\item Aplicaciones Android invasivas de la privacidad del usuario.
 	  	\item No toda aplicación invasiva contiene malware.
 	  	\item De las aplicaciones que más vulneran la privacidad del usuario 35 \%
 	  	contienen malware.
@@ -18,18 +20,40 @@
 \end{frame}
 
 \begin{frame}{Descripción del Problema}
-	\begin{block}{Contramedidas existentes}
-		\begin{itemize}
-		  \item Políticas de control de acceso de la API.
-		  \item Data-Flow analysis con técnicas de análisis tainting.
-		\end{itemize}
-	\end{block}
-	\pause
-	\begin{block}{Herramienta que se requiere}
-		\begin{itemize}
-		  \item Analizar el flujo de información del aplicativo.
-		  \item Garantizar políticas de confidencialidad e integridad desde la
-		  implementación.
-		\end{itemize}
-	\end{block}
+\begin{block}{Limitaciones de la API}
+\begin{itemize}
+  \item Políticas de control de acceso de la API.
+  \item Regular el acceso a recursos protegidos.
+  \item No hacen seguimiento al flujo de información.
+\end{itemize}
+\end{block}
+\pause
+\begin{block}{Propuestas existentes}
+Data-Flow con técnicás de análisis tainting\newline
+\begin{itemize}
+	  \item  Se hace seguimiento a los datos marcados.
+	  \item Ejemplo: FlowDroid
+\end{itemize}	
+\end{block}
+\end{frame}
+
+\begin{frame}{Descripción del Problema}
+\begin{block}{Propuestas existentes}
+Flujo de información con técnicas Program Dependence Graphs(PDG)\newline
+En qué consisten, de forma general.\newline
+\begin{itemize}
+	  \item  Ejemplo: Joana.
+	  \item 
+\end{itemize}	
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Descripción del Problema}
+\begin{block}{Propuestas existentes limitaciones}
+	
+\end{block}
+\begin{block}{Propuestas existentes limitaciones}
+
+\end{block}
 \end{frame}
