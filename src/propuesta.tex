@@ -1,5 +1,6 @@
  \section{Propuesta}
-	
+ 
+\subsection{Diseño}
 \begin{frame}{Propuesta de solución}
 % 	\begin{block}{Herramienta para el desarrollador}
 % 	\begin{itemize}
@@ -7,72 +8,78 @@
 % 	  \item Anotaciones en el código fuente.
 % 	\end{itemize}
 % 	\end{block}
+	\center{Herramienta de Análisis Estático}
 	\begin{figure}[t!]
 		\begin{center} 
 		\includegraphics[width=9cm]{desing3Real-2-2.jpg} 
 		\end{center}
 	\end{figure}
 \end{frame}
-
 \begin{frame}{Política de Seguridad}
-	\begin{figure}[t!]
-		\begin{center} 
-		\includegraphics[width=5cm]{Politica.jpg} 
-		\end{center}
-	\end{figure}
+	\begin{columns}[c]
+	\column{1.5in}
+	\begin{center}
+	\includegraphics[width=5cm]{Politica.jpg} 
+	\end{center}
+	\column{1.5in}
+	Flujos de información entre: información con nivel de seguridad alto e
+	información con nivel de seguridad bajo.
+	\end{columns}
 \end{frame}
 
-\begin{frame}{Lineamientos de Anotación}
+\subsection{Lineamientos de Anotación} 
+\begin{frame}{Autoridad y Labels de Anotación}
 	\center{Autoridad Máxima}
 	\begin{center}
-		\includegraphics[width=1cm]{Principal.jpg}
+	\includegraphics[width=3cm]{Principal.jpg}
 	\end{center}
-	
-		\begin{columns}[c]
-			\column{1.5in}
-				\begin{center}
-	 			\includegraphics[width=1cm]{high.jpg}
-				\end{center}
-				Nivel de Seguridad Alto
-	 		\column{1.5in}
-	 		\begin{center} 
-	 			\includegraphics[width=1cm]{low.jpg}
-	 			\end{center}
-	 			Nivel de Seguridad Bajo\newline
-	 			
-		\end{columns}
+	\begin{columns}[c]
+	\column{1.5in}
+	\begin{center}
+	\includegraphics[width=3cm]{high.jpg}
+	\end{center}
+	Nivel de Seguridad Alto
+	\column{1.5in}
+	\begin{center} 
+	\includegraphics[width=3cm]{low.jpg}
+	\end{center}
+	Nivel de Seguridad Bajo\newline
+	\end{columns}
+\end{frame}	
+\begin{frame}{Anotaciones a la API} %Anotaciones para
+	\begin{block}{Controlar canales} 
+	\begin{itemize}
+	  \item Mensajes de texto (SmSManager)
+	  \item Mensajes log (Log)
+	\end{itemize} 
+	\end{block}
+	\begin{block}{Clases adicionales requeridas}
+		\begin{itemize}
+		  \item Clases para los sources
+		  \item Clases para métodos de sobresscritura
+		\end{itemize}
+	\end{block}
+\end{frame}	
+\begin{frame}[fragile]{Controlar canales}
+\begin{lstlisting}
+sendTextMessage{Alice:}(String{Alice:}destAdd, 
+		String{Alice:}scAdd, 
+		String{} text,
+	    PendingIntent{Alice:} sentIntent,
+		PendingIntent{Alice:} deliveryIntent) { }
+\end{lstlisting}
 \end{frame}
-	
-% 	\begin{block}
-% % 	\center{Labels de seguridad}
-% 	
-% % 		\begin{columns}[c]
-% % 		\column{1.5}
-% % % 			\begin{figure}[t!]
-% % % 				\begin{center} 
-% % 				\includegraphics[width=3cm]{Principal.jpg} 
-% % % 				\end{center}
-% % % 			\end{figure}
-% % 			Nivel de seguridad alto
-% % 		\end{columns}
-% 
-% 	\begin{columns}[c]{}
-% % 	\column{1.5in}{Autoridad Máxima}
-% % 	 \includegraphics[width=3cm]{Principal.jpg}
-% 
-% 	 \column{1.5in}
-% 	 \includegraphics[width=3cm]{high.jpg}\newline
-% 	 Nivel de seguridad alto
-% 
-% 	 \column{1.5in}
-% 	 \includegraphics[width=3cm]{low.jpg}\newline
-% 	 Nivel de seguridad bajo
-% 
-% 	\end{columns}
-% 	\end{block}
-% \end{frame} 
+\begin{frame}{Clases adicionales requeridas}
+	\begin{block}{Mecanismos}
+		\begin{itemize}
+		  \item Anotación
+		  \item Signaturas Nativas
+		  \item signaturas nativas más labels de Seguridad
+		\end{itemize}
+	\end{block}
+\end{frame}
 
-\begin{frame}{Anotaciones a la API}
+\begin{frame}{Anotaciones para Integrar Clases de la API}
 	\begin{figure}[t!]
 		\begin{center} 
 		\includegraphics[width=9cm]{annotationsMechanims.jpeg} 
@@ -80,6 +87,30 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Anotaciones en los aplicativos a analizar}
-	
+\begin{frame}
+	\begin{center}
+		\includegraphics[width=4cm]{desingSolution2-2.jpg}
+	\end{center}
 \end{frame}
+
+\begin{frame}{Anotación de aplicativos a analizar}{Generador de anotaciones}
+\begin{block}{Objetivo de la anotación}
+	\begin{itemize}
+	  \item Métodos source contenidos en la clase
+	  \item Métodos que influencian el source
+	  \item Envio de información hacia canales con nivel de seguridad bajo
+	\end{itemize}
+\end{block}	
+\pause	
+\begin{block}{Lo que se anota}
+	\begin{itemize}
+	  \item Variables source
+	  \item Métodos source
+	  \item Método no source
+	\end{itemize}
+\end{block}		
+\end{frame}
+
+
+
+
