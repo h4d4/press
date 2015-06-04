@@ -1,27 +1,76 @@
  \section{Propuesta}
- 
-\subsection{Diseño}
+\subsection{Requerimientos}
 \begin{frame}{Propuesta de solución}
-\begin{block}{Herramienta que se requiere}
+	\begin{block}{El desarrollador requiere}
 		\begin{itemize}
-		  \item Analizar el flujo de información del aplicativo.
-		  \item Garantizar políticas de confidencialidad e integridad desde la
-		  implementación.
+		  \item Definir políticas de seguridad desde la implementación de sus aplicativos.
+		  \item Una herramienta que verifique las políticas definidas.
+		  \item Garantizarle al usuario que la aplicación respeta determinadas
+		  políticas de seguridad.
 		\end{itemize}
 	\end{block}
-% 	\begin{block}{Herramienta para el desarrollador}
-% 	\begin{itemize}
-% 	  \item Hacer análisis estático del flujo de información de su aplicación.
-% 	  \item Anotaciones en el código fuente.
-% 	\end{itemize}
-% 	\end{block}
+\end{frame}
+
+\subsection{Propuesta}
+\begin{frame}{Propuesta de solución}
+	\begin{block}{Propuesta}
+		  Proveer una herramienta de análisis de flujo de información mediante el
+		  sistema de anotaciones de Jif.
+	\end{block}
 	\center{Herramienta de Análisis Estático}
 	\begin{figure}[t!]
 		\begin{center} 
-		\includegraphics[width=9cm]{desing3Real-2-2.jpg} 
+		\includegraphics[width=9cm]{desing3Real-2-2-azul.jpg} 
 		\end{center}
 	\end{figure}
 \end{frame}
+
+\subsection{Jif}
+\begin{frame}{Características de Jif}
+\begin{itemize}
+  \item Lenguaje tipado de seguridad.
+  \item Extensiones de seguridad al lenguaje java.
+  \item Restricciones para uso de la información.
+  \item Análisis de flujo de información mediante chequeo de etiquetas.
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Características sobresalientes de Jif}
+\begin{columns}[T]
+\column{2in}
+	\begin{itemize}
+	  \item Anotar propiedades de seguridad.
+	  \item Verificar las propiedades de seguridad.
+	  \item Cubrir todas las posibles ramas de ejecución en el análisis.
+	  \item Diseñado para aplicativos Java.
+	\end{itemize}
+\column{2in}{Flujos explícitos - Flujos implícitos}
+	
+
+\end{columns}
+\end{frame}
+
+\subsection{Propuesta - especificaciones}
+\begin{frame}{}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{frame}{Política de Seguridad}
 	\begin{columns}[c]
 	\column{1.5in}
