@@ -1,4 +1,5 @@
 \section{Background}
+\subsection{}
 \begin{frame}{Background}
 	\begin{block}{Técnicas de análisis}
 	\begin{itemize}
@@ -15,6 +16,7 @@
 	  \item Framework Android.
 	  \item Componentes de aplicación.
 	\end{itemize}
+	\pause
 	\end{block}
 	\begin{block}{Sistema de anotaciones en Jif}
 	\begin{itemize}
@@ -27,10 +29,28 @@
 \end{frame}
 \begin{frame}{Background}
 	\begin{block}{DML de JIF}
-	\begin{itemize}
-	  \item Principals
-	  \item Políticas
-	  \item Labels
-	\end{itemize}
+		Elementos del modelo de anotación:
+		\begin{itemize}
+		  \item Principals
+		  \item Políticas
+		  \item Labels
+		\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}[fragile]{Background}
+% 	\pause
+	\begin{block}{Principals}
+		Autoridad sobre un sistema o programa(Alice, Bob, Chunck)
+	\end{block}
+	\pause
+	\begin{block}{Políticas}
+		\{owner: reader list\}\ u \{owner: writer list\}
+	\end{block}
+	\pause
+	\begin{block}{Labels} 
+		Políticas de seguridad que se adicionan a las expresiones del programa.
+		\begin{lstlisting}[style=base]
+			int@{Alice:}@ code;
+		\end{lstlisting}
 	\end{block}
 \end{frame}

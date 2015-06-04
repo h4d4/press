@@ -22,8 +22,8 @@
 	\includegraphics[width=5cm]{Politica.jpg} 
 	\end{center}
 	\column{1.5in}
-	Flujos de información entre: información con nivel de seguridad alto e
-	información con nivel de seguridad bajo.
+	Flujos de información entre: información con nivel de seguridad alto(sources) e
+	información con nivel de seguridad bajo(sinks).
 	\end{columns}
 \end{frame}
 
@@ -31,19 +31,28 @@
 \begin{frame}{Autoridad y Labels de Anotación}
 	\center{Autoridad Máxima}
 	\begin{center}
-	\includegraphics[width=3cm]{Principal.jpg}
+	\includegraphics[width=2cm]{Principal.jpg}
 	\end{center}
-	\begin{columns}[c]
-	\column{1.5in}
+	\begin{columns}[T]
+	\column{2in}
+	Nivel de Seguridad Alto:
 	\begin{center}
-	\includegraphics[width=3cm]{high.jpg}
+	\vspace{-0.5em}
+	\includegraphics[width=2cm]{high.jpg}\newline
+	\vspace{-1.5em}
 	\end{center}
-	Nivel de Seguridad Alto
-	\column{1.5in}
-	\begin{center} 
-	\includegraphics[width=3cm]{low.jpg}
+	Sólo el principal \emph{Alice}\\ dueño de la política \\ podrá leer la
+	información.
+	\column{2in}
+	Nivel de Seguridad Bajo:
+	\begin{center}
+	\vspace{-0.5em} 
+	\includegraphics[width=2cm]{low.jpg}\newline
+	\vspace{-1.5em}
 	\end{center}
-	Nivel de Seguridad Bajo\newline
+	No se define un principal,\\
+	todos pueden leer\\
+	la información.
 	\end{columns}
 \end{frame}	
 \begin{frame}{Anotaciones a la API} %Anotaciones para
