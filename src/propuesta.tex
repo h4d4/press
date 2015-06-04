@@ -49,68 +49,63 @@
 \begin{frame}{Anotaciones a la API} %Anotaciones para
 	\begin{block}{Controlar canales} 
 	\begin{itemize}
-	  \item Mensajes de texto (SmSManager)
+	  \item Mensajes de texto (SmsManager)
 	  \item Mensajes log (Log)
 	\end{itemize} 
 	\end{block}
+	\pause
 	\begin{block}{Clases adicionales requeridas}
 		\begin{itemize}
-		  \item Clases para los sources
-		  \item Clases para métodos de sobresscritura
+		  \item Clases para los sources (TelephonyManager)
+		  \item Clases para métodos de sobresscritura (Activity)
 		\end{itemize}
 	\end{block}
 \end{frame}	
-\begin{frame}[fragile]{Controlar canales}
-\begin{lstlisting}
-sendTextMessage{Alice:}(String{Alice:}destAdd, 
-		String{Alice:}scAdd, 
-		String{} text,
-	    PendingIntent{Alice:} sentIntent,
-		PendingIntent{Alice:} deliveryIntent) { }
-\end{lstlisting}
+\begin{frame}[fragile]{Anotaciones a la API}
+\begin{block}{Controlar canales}
+\begin{lstlisting}[style=base]
+<sendTextMessage>@{Alice:}@ <(> 
+String@{Alice:}@ destinationAddress, 
+String@{Alice:}@ sourceAddress, 
+String-{}-text, 
+PendingIntent@{Alice:}@ sentIntent,
+PendingIntent@{Alice:}@ deliveryIntent 
+<)>{}
+\end{lstlisting} 
+\end{block}
 \end{frame}
-\begin{frame}{Clases adicionales requeridas}
-	\begin{block}{Mecanismos}
-		\begin{itemize}
-		  \item Anotación
-		  \item Signaturas Nativas
-		  \item signaturas nativas más labels de Seguridad
-		\end{itemize}
-	\end{block}
-\end{frame}
+% \begin{frame}{Clases adicionales requeridas}
+% 	\begin{block}{Mecanismos}
+% 		\begin{itemize}
+% 		  \item Anotación
+% 		  \item Signaturas Nativas
+% 		  \item signaturas nativas más labels de Seguridad
+% 		\end{itemize}
+% 	\end{block}
+% \end{frame}
 
-\begin{frame}{Anotaciones para Integrar Clases de la API}
+\begin{frame}{Anotaciones a la API}
 	\begin{figure}[t!]
 		\begin{center} 
 		\includegraphics[width=9cm]{annotationsMechanims.jpeg} 
 		\end{center}
 	\end{figure}
 \end{frame}
-
-\begin{frame}
-	\begin{center}
-		\includegraphics[width=4cm]{desingSolution2-2.jpg}
-	\end{center}
+\begin{frame}{Anotación de aplicativos a analizar}
+	\begin{columns}[c]
+		\column{1.5in}{Generador de Anotaciones}
+			\includegraphics[width=4cm]{desingSolution2-2.jpg}
+		\column{1.5in}
+			\begin{itemize}
+	  		\item Objetivo de la anotación
+	  		\item Elementos a anotar
+			\end{itemize}
+	\end{columns}
 \end{frame}
-
-\begin{frame}{Anotación de aplicativos a analizar}{Generador de anotaciones}
-\begin{block}{Objetivo de la anotación}
-	\begin{itemize}
-	  \item Métodos source contenidos en la clase
-	  \item Métodos que influencian el source
-	  \item Envio de información hacia canales con nivel de seguridad bajo
-	\end{itemize}
-\end{block}	
-\pause	
-\begin{block}{Lo que se anota}
-	\begin{itemize}
-	  \item Variables source
-	  \item Métodos source
-	  \item Método no source
-	\end{itemize}
-\end{block}		
-\end{frame}
-
-
-
-
+% \begin{frame}{Anotación de aplicativos a analizar}
+% 	\begin{lstlisting}[style=base]
+% 	TelephonyManager {Alice:}mgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+%     SmsManager sms = SmsManager.getDefault();
+%     sms.sendTextMessage("+49 1234", null, mgr.getDeviceId(), null, null);
+% 	\end{lstlisting}
+% \end{frame}

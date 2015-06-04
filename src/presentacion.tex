@@ -9,8 +9,19 @@
 \usepackage{verbatim}
 \usepackage{graphicx}
 \usepackage{subfigure}
+\usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{listings} 
+% \lstset{escapeinside={<*}{*>}}
+\lstdefinestyle{base}{
+  language=java,
+  emptylines=1,
+  breaklines=true,
+  basicstyle=\footnotesize,
+  moredelim=**[is][\color{red}]{@}{@},
+  moredelim=**[is][\color{blue}]{-}{-},
+  moredelim=**[is][\color{green}]{<}{>},
+  }
 \graphicspath{{../imagenes/}}
 %\usepackage[table]{xcolor}
 \begin{document}
