@@ -1,7 +1,77 @@
  \section{Resultados de evaluación}
-	
+
 \begin{frame}{Evaluación}
-	\begin{block}{}
-	Comparación con FlowDroid y JoDroid
-	\end{block}
+\begin{itemize}
+	 \item Conjunto de evaluación.\newline
+	 \item DroidBench benchmark.
+\end{itemize}
+\pause
+\begin{columns}[T]
+\begin{column}[T]{5in}
+\begin{table}
+\scalebox{0.7}{
+% \center{Comparación con FlowDroid y JoDroid}
+\begin{tabular}{cc|c|c|c}
+\cline{2-4}
+& \multicolumn{0}{ |c|  }{\multirow{1}{*}{\cellcolor{gray!30} FlowDroid} } &
+\cellcolor{gray!30}JoDroid & \cellcolor{gray!30}Prototipo \\
+\cline{1-4}
+\multicolumn{0}{ |c|  }{\multirow{0}{*}{Precisión} }  & 78,57\% & 78,57\% & 73,68\%
+\\
+\cline{0-3}
+\multicolumn{0}{ |c|  }{\multirow{0}{*}{Recall} }  & 78,57 & 78,57\% &  100\%\\
+\cline{0-3}
+\multicolumn{0}{ |c|  }{\multirow{0}{*}{Detección Flujos Implícitos} }  & No &
+Si & Si\\
+\cline{0-3}
+\end{tabular}}
+\end{table}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Cuadro comparativo}
+\begin{table}[H]
+\begin{center}
+\small\addtolength{\tabcolsep}{-3pt}
+\scalebox{0.7}{
+\begin{tabular}{|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
+	\hline
+	{\multirow{2}{*}{\textbf{Item}}}
+	&\multicolumn{4}{c|}{\cellcolor{gray!30}\textbf{Prototipo vs FlowDroid}} &
+	\multicolumn{4}{c|}{\cellcolor{gray!55}\textbf{Prototipo vs JoDroid}}\\
+	\cline{2-9}
+	 & \cellcolor{gray!30}\tiny{\textbf{ventaja}} &
+	 \cellcolor{gray!30}\tiny{\textbf{desvent}} &
+	 \cellcolor{gray!30}\tiny{\textbf{similit}}&
+	 \cellcolor{gray!30}\tiny{\textbf{diff}} &
+	 \cellcolor{gray!55}\tiny{\textbf{ventaja}} &
+	 \cellcolor{gray!55}\tiny{\textbf{desvent}} &
+	 \cellcolor{gray!55}\tiny{\textbf{similit}}&
+	 \cellcolor{gray!55}\tiny{\textbf{diff}}\\
+	\hline
+	\footnotesize{Menor Precisión} & &\checkmark & & & &\checkmark& &\\
+	\hline
+	Mayor Recall &\checkmark& & & &\checkmark& & &\\
+	\hline
+	Menor costo en desempeño & & & & &\checkmark& & &\\
+	\hline
+	Bajo costo en desempeño & & &\checkmark& & & & & \\
+	\hline
+	Detección de flujos implícitos & \checkmark& & & & & &\checkmark&\\
+	\hline
+	No detección automática de sources y sinks & &\checkmark&& &&&\checkmark& \\
+	\hline
+	No soporte para Análisis interApp & &\checkmark& & & & &\checkmark&\\
+	\hline
+	\footnotesize{Tipo de análisis(flujo de información; flujo de datos)} & & &
+	&\checkmark& & & &\\
+	\hline
+	Tipo de análisis IFC & & & & & & &\checkmark&\\
+	\hline
+	Técnica de análisis: PDG, slicing & & & & & & & &\checkmark\\
+	\hline
+\end{tabular}}
+\end{center}
+\end{table}
 \end{frame}
