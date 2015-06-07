@@ -44,7 +44,7 @@
 	  \item Diseñado para aplicativos Java.
 	\end{itemize}
 \column{2in}{Flujos: explicitos - implícitos }
-\begin{lstlisting}[style=base][frame=single][caption=First C example]
+\begin{lstlisting}[style=base]
 	int x,y;
 	x = 1;	
 	y = 4 + x;
@@ -61,15 +61,34 @@ void foo(a){
 \end{lstlisting}
 \end{columns}
 
-
-
-
 \end{frame}
 
 \subsection{Propuesta - Especificaciones}
-\begin{frame}{Política de Seguridad}
+\begin{frame}[fragile]{Política de Seguridad}
+\begin{columns}[T]
+\column{1.5in}
+	\includegraphics[width=4cm]{Politica.jpg} 
+	\pause
+\column{2.5in}
+\begin{lstlisting}[style=base]
+	String imei = @getDeviceId()@;
+	<sendTextMessage>(imei);
+\end{lstlisting}
+\pause
+\begin{lstlisting}[style=base][frame=single]
+String passwd = @EditText@.getText();
+boolean passwdOk = false;
+if(passwd.equals("superSecure"))
+	passwdOk = true;
+if(passwdOk)
+	<Log>.i("INFO","Password correcto");
+else
+	<Log>.i("INFO","Password incorrecto");
+\end{lstlisting}
+\end{columns}
 
 \end{frame}
+
 \begin{frame}{Anotaciones Propuestas}
 	
 \end{frame}
