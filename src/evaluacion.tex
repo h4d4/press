@@ -1,102 +1,60 @@
  \section{Resultados de evaluación}
-
-\begin{frame}{Evaluación}
-\begin{itemize}
-	 \item DroidBench benchmark: conjunto de evaluación.
-	 \item Prototipo: herramienta de análisis  propuesta.
-	 \item Herramientas de comparación: FlowDroid y JoDroid.
-\end{itemize}
-\pause
-\begin{columns}[c]
-\begin{column}{1.6in}
-\begin{mdframed}
-\scriptsize{\emph{Precisión = TP/(TP +FP)}}
-\end{mdframed}
-\begin{mdframed}
-\scriptsize{\emph{Recall = TP/(TP+FN)}}
-\end{mdframed}
-\end{column}
-\begin{column}{4in}
-\begin{table}
-\scalebox{0.2}{
-\begin{tabular}{cc|c|c|c}
-\cline{2-4}
-& \multicolumn{0}{ |c|  }{\multirow{1}{*}{\cellcolor{gray!30} FlowDroid} } &
-\cellcolor{gray!30}JoDroid & \cellcolor{gray!30}Prototipo \\
-\cline{1-4}
-\multicolumn{0}{ |c|  }{\multirow{0}{*}{Precisión} }  & 78,57\% & 78,57\% & 73,68\%
-\\
-\cline{0-3}
-\multicolumn{0}{ |c|  }{\multirow{0}{*}{Recall} }  & 78,57 & 78,57\% &  100\%\\
-\cline{0-3}
-\multicolumn{0}{ |c|  }{\multirow{0}{*}{Detección Flujos Implícitos} }  & No &
-Si & Si\\
-\cline{0-3}
-\end{tabular}}
-\end{table}
-	
-\begin{table}
-\scalebox{0.4}{
-\small\addtolength{\tabcolsep}{-3pt}
-\begin{tabular}{|p{4cm}|p{2cm}|p{2cm}|p{2cm}|}
-	\hline
-	\cellcolor{gray!30} Item & \cellcolor{gray!30} FlowDroid & \cellcolor{gray!30}
-	JoDroid & \cellcolor{gray!30} Prototipo\\
-	\hline
-	Precisión & 78,57\% & 78,57\% & 73,68\% \\
-	\hline
-	Recall & 78,57 & 78,57\% &  100\%\\
-	\hline
-	Detección Flujos Implícitos & No & Si & Si\\
-	\hline
-\end{tabular}}	
-\end{table}
-\end{column}
-\end{columns}
-\end{frame}
+% \begin{frame}{Evaluación}
+% \begin{columns}[T]
+% \column{2.5in}
+% \begin{itemize}
+% 	 \item DroidBench benchmark: conjunto de evaluación.
+% 	 \item Prototipo: herramienta de análisis  propuesta.
+% 	 \item Herramientas de comparación: FlowDroid y JoDroid.
+% \end{itemize}
+% \begin{column}{2in}
+% % \begin{mdframed}
+% \scriptsize{\emph{Precisión = TP/(TP +FP)}}
+% % \end{mdframed}
+% \begin{mdframed}
+% \scriptsize{\emph{Recall = TP/(TP+FN)}}
+% \end{mdframed}
+% \end{column}
+% % \begin{table}
+% % \scalebox{0.5}{
+% % \small\addtolength{\tabcolsep}{-3pt}
+% % \begin{tabular}{|p{4cm}|p{2cm}|p{2cm}|p{2cm}|}
+% % 	\hline
+% % 	\cellcolor{gray!30} Item & \cellcolor{gray!30} FlowDroid & \cellcolor{gray!30}
+% % 	JoDroid & \cellcolor{gray!30} Prototipo\\
+% % 	\hline
+% % 	Precisión & 78,57\% & 78,57\% & 73,68\% \\
+% % 	\hline
+% % 	Recall & 78,57 & 78,57\% &  100\%\\
+% % 	\hline
+% % 	Detección Flujos Implícitos & No & Si & Si\\
+% % 	\hline
+% % \end{tabular}}
+% % \end{table}
+% \end{columns}
+% \end{frame}
 
 \begin{frame}{Cuadro comparativo}
-\begin{table}[H]
-\begin{center}
+\begin{table}
+\scalebox{0.6}{
 \small\addtolength{\tabcolsep}{-3pt}
-\scalebox{0.5}{
-\begin{tabular}{|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
+\begin{tabular}{|p{6cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
 	\hline
-	{\multirow{2}{*}{\textbf{Item}}}
-	&\multicolumn{4}{c|}{\cellcolor{gray!30}\textbf{Prototipo vs FlowDroid}} &
-	\multicolumn{4}{c|}{\cellcolor{gray!55}\textbf{Prototipo vs JoDroid}}\\
-	\cline{2-9}
-	 & \cellcolor{gray!30}\tiny{\textbf{ventaja}} &
-	 \cellcolor{gray!30}\tiny{\textbf{desvent}} &
-	 \cellcolor{gray!30}\tiny{\textbf{similit}}&
-	 \cellcolor{gray!30}\tiny{\textbf{diff}} &
-	 \cellcolor{gray!55}\tiny{\textbf{ventaja}} &
-	 \cellcolor{gray!55}\tiny{\textbf{desvent}} &
-	 \cellcolor{gray!55}\tiny{\textbf{similit}}&
-	 \cellcolor{gray!55}\tiny{\textbf{diff}}\\
+	\cellcolor{gray!30} Item & \cellcolor{gray!30} Prototipo &
+	\cellcolor{gray!30} FlowDroid & \cellcolor{gray!30} JoDroid\\
 	\hline
-	\footnotesize{Menor Precisión} & &\checkmark & & & &\checkmark& &\\
+	Precisión & - & + & +\\
 	\hline
-	Mayor Recall &\checkmark& & & &\checkmark& & &\\
+	Recall & + & - & -\\
 	\hline
-	Menor costo en desempeño & & & & &\checkmark& & &\\
+	Costo en desempeño & - & - & + \\
 	\hline
-	Bajo costo en desempeño & & &\checkmark& & & & & \\
+	Detección Flujos Implícitos & \checkmark & X & \checkmark\\
 	\hline
-	Detección de flujos implícitos & \checkmark& & & & & &\checkmark&\\
+	Detección automática de sources y sinks & X & \checkmark & X\\
 	\hline
-	No detección automática de sources y sinks & &\checkmark&& &&&\checkmark& \\
+	Soporte para análisis InterApp & X & \checkmark & X\\
 	\hline
-	No soporte para Análisis interApp & &\checkmark& & & & &\checkmark&\\
-	\hline
-	\footnotesize{Tipo de análisis(flujo de información; flujo de datos)} & & &
-	&\checkmark& & & &\\
-	\hline
-	Tipo de análisis IFC & & & & & & &\checkmark&\\
-	\hline
-	Técnica de análisis: PDG, slicing & & & & & & & &\checkmark\\
-	\hline
-\end{tabular}}
-\end{center}
+\end{tabular}}	
 \end{table}
 \end{frame}

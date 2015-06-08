@@ -50,14 +50,14 @@
 	y = 4 + x;
 \end{lstlisting}
 \begin{lstlisting}[style=base]
-void foo(a){
+	void foo(a){
 	int x;
 	if(a > 10)
 		x = 1;
 	else
 		x = 2;
 	printf(x);
-}
+	}
 \end{lstlisting}
 \end{columns}
 
@@ -85,14 +85,47 @@ if(passwdOk)
 else
 	<Log>.i("INFO","Password incorrecto");
 \end{lstlisting}
+% \begin{lstlisting}[style=base][frame=single]
+% String passwd = @EditText@.getText();
+% boolean passwdOk = false;
+% if(passwd.equals("superSecure"))
+% 	passwdOk = true;
+% 	
+% if(passwdOk)
+% 	<Log>.i("INFO","Password correcto");
+% else
+% 	<Log>.i("INFO","Password incorrecto");
+% \end{lstlisting}
 \end{columns}
-
 \end{frame}
 
 \begin{frame}[fragile]{Anotaciones Propuestas}
 \begin{columns}[T]
 \column{1.5in}{DLM de Jif}
+\begin{mdframed}
+\scriptsize{
+\textbf{Principales}\newline
+Autoridad
+}
+\end{mdframed}
+\vspace{-0.5em}
+\begin{mdframed}
+\scriptsize{
+\textbf{Políticas}\newline
+{dueño: lista-lectores}
+}
+\end{mdframed}
+\vspace{-0.5em}
+\begin{mdframed}
 
+\scriptsize{
+\textbf{Etiquetas}\newline}
+\begin{lstlisting}[style=base2][
+int code; 
+int {Alice:} code; 
+\end{lstlisting}
+\end{mdframed}
+\vspace{-0.5em}
 \column{2in}
 \begin{mdframed}
 \scriptsize{
@@ -129,41 +162,44 @@ No se define un Principal la información podrá leerse por todos. }
 \end{frame}
 
 \begin{frame}{Anotaciones a la API} 
-\begin{block}{}
+\begin{block}{Flujo de información en la API}
 	\begin{itemize}
 	  \item La API posibilita el acceso de la app a sources y Sinks.
 	  \item Se generan flujos de información.
 	  \item Controlar flujos de información entre sources y sinks.
 	\end{itemize}
 \end{block}
-\begin{block}{Ejemplo}
-Ejemplo con etiquetas(flujos implícitos - flujos explícitos)
+\begin{block}{Sources y sinks definidos en la API}
+	\begin{itemize}
+	  \item getDeviceId (método source) $\rightarrow$ TelephonyManager
+	  \item Mensajes de texto (sinks) $\rightarrow$ SmsManager
+	\end{itemize}
 \end{block}
 \end{frame}
-% 
-% 
-% \begin{frame}{Anotaciones a la API}
-% 	\begin{figure}[t!]
-% 		\begin{center} 
-% 		\includegraphics[width=9cm]{annotationsMechanims.jpeg} 
-% 		\end{center}
-% 	\end{figure}
-% \end{frame}
-% \begin{frame}{Anotación de aplicativos a analizar}
-% 	\begin{columns}[c]
-% 		\column{1.5in}{Generador de Anotaciones}
-% 			\includegraphics[width=4cm]{desingSolution2-2.jpg}
-% 		\column{1.5in}
-% 			\begin{itemize}
-% 	  		\item Objetivo de la anotación
-% 	  		\item Elementos a anotar
-% 			\end{itemize}
-% 	\end{columns}
-% \end{frame}
-% \begin{frame}{Anotación de aplicativos a analizar}
-% 	\begin{lstlisting}[style=base]
-% 	TelephonyManager {Alice:}mgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-%     SmsManager sms = SmsManager.getDefault();
-%     sms.sendTextMessage("+49 1234", null, mgr.getDeviceId(), null, null);
-% 	\end{lstlisting}
-% \end{frame}
+
+\begin{frame}[fragile]{Anotaciones a la API}
+\begin{block}{Flujo explícito}
+\begin{center}
+\begin{lstlisting}[style=base2]
+String @{Alice:}@imei = getDeviceId();
+String <{}> pub = imei;
+\end{lstlisting}
+\end{center}
+\end{block}
+
+\begin{block}{Flujo implícito}
+\begin{center}
+\begin{lstlisting}[style=base2][frame=single]
+String @{Alice:}@passwd = EditText.getText();
+boolean <{}>passwdOk = false;
+if(passwd.equals("superSecure"))
+	passwdOk = true;
+	
+if(passwdOk)
+	<Log>.i("INFO","Password correcto");
+else
+	<Log>.i("INFO","Password incorrecto");
+\end{lstlisting}
+\end{center}
+\end{block}
+\end{frame}
