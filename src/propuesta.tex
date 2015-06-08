@@ -3,10 +3,10 @@
 \begin{frame}{Propuesta de solución}
 	\begin{block}{El desarrollador requiere}
 		\begin{itemize}
-		  \item Definir políticas de seguridad desde la implementación de sus aplicativos.
-		  \item Una herramienta que verifique las políticas definidas.
 		  \item Garantizarle al usuario que la aplicación respeta determinadas
 		  políticas de seguridad.
+		  \item Definir políticas de seguridad a verificar.
+		  \item Una herramienta que verifique las políticas definidas.
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -27,12 +27,14 @@
 
 \subsection{Jif}
 \begin{frame}{Características de Jif}
+\begin{block}{Jif}
 \begin{itemize}
   \item Lenguaje tipado de seguridad.
   \item Extensiones de seguridad al lenguaje java.
   \item Restricciones para uso de la información.
   \item Análisis de flujo de información mediante chequeo de etiquetas.
 \end{itemize}
+\end{block}
 \end{frame}
 \begin{frame}[fragile]{Características sobresalientes de Jif}
 \begin{columns}[T]
@@ -43,12 +45,14 @@
 	  \item Cubrir todas las posibles ramas de ejecución en el análisis.
 	  \item Diseñado para aplicativos Java.
 	\end{itemize}
-\column{2in}{Flujos: explicitos - implícitos }
+\column{2in}{Flujos: explícitos - implícitos}
 \begin{lstlisting}[style=base]
 	int x,y;
 	x = 1;	
 	y = 4 + x;
 \end{lstlisting}
+\vspace{-0.5em}
+% \center{Flujos implícitos}
 \begin{lstlisting}[style=base]
 	void foo(a){
 	int x;
@@ -56,7 +60,7 @@
 		x = 1;
 	else
 		x = 2;
-	printf(x);
+	printf(x); 
 	}
 \end{lstlisting}
 \end{columns}

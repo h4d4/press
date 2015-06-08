@@ -4,15 +4,15 @@
 	\begin{block}{Manipulación de información del usuario}
 	\begin{itemize}
 	\item El desarrollador Android no tiene cómo definir políticas de seguridad para
-	regular el flujo de información de sus aplicaciones.
+	regular el flujo de información de sus aplicaciones.\pause
 	\item Complejidad para prevenir fugas de información del usuario.
 	\end{itemize}
 	\end{block}
 	\pause
 	\begin{block}{Reporte McAffe}
 	\begin{itemize}
-	\item Aplicaciones Android invasivas de la privacidad del usuario.
-	\item No toda aplicación invasiva contiene malware.
+	\item Aplicaciones Android invasivas de la privacidad del usuario.\pause
+	\item No toda aplicación invasiva contiene malware.\pause
 	\item De las aplicaciones que más vulneran la privacidad del usuario 35 \%
 	contienen malware.
 	\end{itemize}
@@ -22,50 +22,68 @@
 \begin{frame}{Descripción del Problema}
 \begin{block}{Limitaciones de la API}
 \begin{itemize}
-  \item Políticas de control de acceso de la API.
-  \item Regular el acceso a recursos protegidos.
+  \item Políticas de control de acceso de la API.\pause
+  \item Regular el acceso a recursos protegidos.\pause
   \item No hacen seguimiento al flujo de información.
 \end{itemize}
 \end{block}
+\pause
 \begin{block}{Propuestas existentes}
 \begin{itemize}
-  \item Análisis estático y análisis dinámico.
-  \item Análisis dinámico: actuales caminos de ejecución.
+  \item Análisis estático y análisis dinámico.\pause
+  \item Análisis dinámico: actuales caminos de ejecución.\pause
   \item Análisis estático: es posible incluir todos los caminos de ejecución.
 \end{itemize}
 \end{block}
 \end{frame}
 
+% \begin{frame}{Descripción del Problema}
+% \begin{block}{Propuestas existentes}
+% Data-Flow con técnicas de análisis tainting.
+% \begin{itemize}
+% 	  \item Se hace seguimiento a los datos marcados.
+% 	  \item No incluye todos los posibles caminos de ejecución.
+% 	  \item Ejemplo: FlowDroid
+% \end{itemize}
+% \end{block}
+% \end{frame}
+% % 
+% \begin{frame}{Descripción del Problema}
+% \begin{block}{Propuestas existentes}
+% Flujo de información con técnicas Program Dependence Graphs(PDG).
+% \begin{itemize}
+%  	  \item Los PDG proveen una representación del programa que se analiza.
+% 	  \item Análisis de flujos de información del programa de principio a fin.
+% 	  \item Incluye todos los posibles caminos de ejecución.
+% 	  \item Ejemplo: Joana.
+% \end{itemize}
+% \end{block}
+% \end{frame}
 \begin{frame}{Descripción del Problema}
-\begin{block}{Propuestas existentes}
-Data-Flow con técnicas de análisis tainting.
+\begin{block}{Propuestas existentes: FlowDroid}
 \begin{itemize}
-	  \item Se hace seguimiento a los datos marcados.
+	  \item Data-Flow con técnicas de análisis tainting.
 	  \item No incluye todos los posibles caminos de ejecución.
-	  \item Ejemplo: FlowDroid
+	  \item No permite definir políticas de seguridad.
 \end{itemize}
 \end{block}
-\end{frame}
-% 
-\begin{frame}{Descripción del Problema}
-\begin{block}{Propuestas existentes}
-Flujo de información con técnicas Program Dependence Graphs(PDG).
+\pause
+\begin{block}{Propuestas existentes: Joana}
 \begin{itemize}
- 	  \item Los PDG proveen una representación del programa que se analiza.
-	  \item Análisis de flujos de información del programa de principio a fin.
+  	  \item Flujo de información con técnicas Program Dependence Graphs(PDG). 
 	  \item Incluye todos los posibles caminos de ejecución.
-	  \item Ejemplo: Joana.
+	  \item No permite definir políticas de seguridad.
 \end{itemize}
 \end{block}
 \end{frame}
 
 \begin{frame}{Descripción del Problema}
-\begin{block}{Propuestas existentes}
-Enfoque de las propuestas existentes:
+\begin{block}{Enfoque Propuestas existentes}
 \begin{itemize}
-  \item Identificar fugas de información en aplicativos ya implementados.
-  \item FlowDroid: no incluye todos los posibles caminos de ejecución.
-  \item Joana: no permite definir las políticas de seguridad a evaluar.
+  \item Precisión y eficiencia del análisis.
+  \item Identificar fugas de información. 
+  \item Aplicativos de terceros ya implementados.
+  \item No permiten definir políticas de seguridad.
 \end{itemize}
 \end{block}
 \end{frame}
