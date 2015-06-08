@@ -89,124 +89,77 @@ else
 
 \end{frame}
 
-\begin{frame}{Anotaciones Propuestas}
-	
+\begin{frame}[fragile]{Anotaciones Propuestas}
+\begin{columns}[T]
+\column{1.5in}{DLM de Jif}
+
+\column{2in}
+\begin{mdframed}
+\scriptsize{
+\textbf{Autoridad máxima}\newline
+El Principal \emph{\textcolor{red}{Alice}} representa la máxima autoridad del
+programa.}
+\end{mdframed}
+\vspace{-0.5em}
+
+\begin{mdframed}
+\scriptsize{
+\textbf{Política para anotar información con nivel de seguridad alto:}
+\vspace{-0.5em}
+\begin{lstlisting}[style=base2]
+@{Alice:}@
+\end{lstlisting}
+\vspace{-0.5em}
+Sólo la autoridad máxima del programa podrá leer la información. 
+}
+\end{mdframed}
+\vspace{-0.5em}
+
+\begin{mdframed}
+\scriptsize{
+\textbf{Política para anotar información con nivel de seguridad bajo:}
+\vspace{-0.5em}
+\begin{lstlisting}[style=base2]
+<{ }>
+\end{lstlisting}
+\vspace{-0.5em}
+No se define un Principal la información podrá leerse por todos. }
+\end{mdframed}
+\end{columns}
 \end{frame}
-\begin{frame}{Anotaciones a la API}
-	
-\end{frame}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{frame}{Política de Seguridad}
-	\begin{columns}[c]
-	\column{1.5in}
-	\begin{center}
-	\includegraphics[width=5cm]{Politica.jpg} 
-	\end{center}
-	\column{1.5in}
-	Flujos de información entre: información con nivel de seguridad alto(sources) e
-	información con nivel de seguridad bajo(sinks).
-	\end{columns}
-\end{frame}
-
-\subsection{Lineamientos de Anotación} 
-\begin{frame}{Autoridad y Labels de Anotación}
-	\center{Autoridad Máxima}
-	\begin{center}
-	\includegraphics[width=2cm]{Principal.jpg}
-	\end{center}
-	\begin{columns}[T]
-	\column{2in}
-	Nivel de Seguridad Alto:
-	\begin{center}
-	\vspace{-0.5em}
-	\includegraphics[width=2cm]{high.jpg}\newline
-	\vspace{-1.5em}
-	\end{center}
-	Sólo el principal \emph{Alice}\\ dueño de la política \\ podrá leer la
-	información.
-	\column{2in}
-	Nivel de Seguridad Bajo:
-	\begin{center}
-	\vspace{-0.5em} 
-	\includegraphics[width=2cm]{low.jpg}\newline
-	\vspace{-1.5em}
-	\end{center}
-	No se define un principal,\\
-	todos pueden leer\\
-	la información.
-	\end{columns}
-\end{frame}	
-\begin{frame}{Anotaciones a la API} %Anotaciones para
-	\begin{block}{Controlar canales} 
+\begin{frame}{Anotaciones a la API} 
+\begin{block}{}
 	\begin{itemize}
-	  \item Mensajes de texto (SmsManager)
-	  \item Mensajes log (Log)
-	\end{itemize} 
-	\end{block}
-	\pause
-	\begin{block}{Clases adicionales requeridas}
-		\begin{itemize}
-		  \item Clases para los sources (TelephonyManager)
-		  \item Clases para métodos de sobresscritura (Activity)
-		\end{itemize}
-	\end{block}
-\end{frame}	
-\begin{frame}[fragile]{Anotaciones a la API}
-\begin{block}{Controlar canales}
-\begin{lstlisting}[style=base]
-<sendTextMessage>@{Alice:}@ <(> 
-String@{Alice:}@ destinationAddress, 
-String@{Alice:}@ sourceAddress, 
-String-{}-text, 
-PendingIntent@{Alice:}@ sentIntent,
-PendingIntent@{Alice:}@ deliveryIntent 
-<)>{}
-\end{lstlisting} 
+	  \item La API posibilita el acceso de la app a sources y Sinks.
+	  \item Se generan flujos de información.
+	  \item Controlar flujos de información entre sources y sinks.
+	\end{itemize}
+\end{block}
+\begin{block}{Ejemplo}
+Ejemplo con etiquetas(flujos implícitos - flujos explícitos)
 \end{block}
 \end{frame}
-% \begin{frame}{Clases adicionales requeridas}
-% 	\begin{block}{Mecanismos}
-% 		\begin{itemize}
-% 		  \item Anotación
-% 		  \item Signaturas Nativas
-% 		  \item signaturas nativas más labels de Seguridad
-% 		\end{itemize}
-% 	\end{block}
+% 
+% 
+% \begin{frame}{Anotaciones a la API}
+% 	\begin{figure}[t!]
+% 		\begin{center} 
+% 		\includegraphics[width=9cm]{annotationsMechanims.jpeg} 
+% 		\end{center}
+% 	\end{figure}
 % \end{frame}
-
-\begin{frame}{Anotaciones a la API}
-	\begin{figure}[t!]
-		\begin{center} 
-		\includegraphics[width=9cm]{annotationsMechanims.jpeg} 
-		\end{center}
-	\end{figure}
-\end{frame}
-\begin{frame}{Anotación de aplicativos a analizar}
-	\begin{columns}[c]
-		\column{1.5in}{Generador de Anotaciones}
-			\includegraphics[width=4cm]{desingSolution2-2.jpg}
-		\column{1.5in}
-			\begin{itemize}
-	  		\item Objetivo de la anotación
-	  		\item Elementos a anotar
-			\end{itemize}
-	\end{columns}
-\end{frame}
+% \begin{frame}{Anotación de aplicativos a analizar}
+% 	\begin{columns}[c]
+% 		\column{1.5in}{Generador de Anotaciones}
+% 			\includegraphics[width=4cm]{desingSolution2-2.jpg}
+% 		\column{1.5in}
+% 			\begin{itemize}
+% 	  		\item Objetivo de la anotación
+% 	  		\item Elementos a anotar
+% 			\end{itemize}
+% 	\end{columns}
+% \end{frame}
 % \begin{frame}{Anotación de aplicativos a analizar}
 % 	\begin{lstlisting}[style=base]
 % 	TelephonyManager {Alice:}mgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);

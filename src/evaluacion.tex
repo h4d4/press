@@ -2,15 +2,23 @@
 
 \begin{frame}{Evaluación}
 \begin{itemize}
-	 \item Conjunto de evaluación.\newline
-	 \item DroidBench benchmark.
+	 \item DroidBench benchmark: conjunto de evaluación.
+	 \item Prototipo: herramienta de análisis  propuesta.
+	 \item Herramientas de comparación: FlowDroid y JoDroid.
 \end{itemize}
 \pause
-\begin{columns}[T]
-\begin{column}[T]{5in}
+\begin{columns}[c]
+\begin{column}{1.6in}
+\begin{mdframed}
+\scriptsize{\emph{Precisión = TP/(TP +FP)}}
+\end{mdframed}
+\begin{mdframed}
+\scriptsize{\emph{Recall = TP/(TP+FN)}}
+\end{mdframed}
+\end{column}
+\begin{column}{4in}
 \begin{table}
-\scalebox{0.7}{
-% \center{Comparación con FlowDroid y JoDroid}
+\scalebox{0.2}{
 \begin{tabular}{cc|c|c|c}
 \cline{2-4}
 & \multicolumn{0}{ |c|  }{\multirow{1}{*}{\cellcolor{gray!30} FlowDroid} } &
@@ -26,6 +34,23 @@ Si & Si\\
 \cline{0-3}
 \end{tabular}}
 \end{table}
+	
+\begin{table}
+\scalebox{0.4}{
+\small\addtolength{\tabcolsep}{-3pt}
+\begin{tabular}{|p{4cm}|p{2cm}|p{2cm}|p{2cm}|}
+	\hline
+	\cellcolor{gray!30} Item & \cellcolor{gray!30} FlowDroid & \cellcolor{gray!30}
+	JoDroid & \cellcolor{gray!30} Prototipo\\
+	\hline
+	Precisión & 78,57\% & 78,57\% & 73,68\% \\
+	\hline
+	Recall & 78,57 & 78,57\% &  100\%\\
+	\hline
+	Detección Flujos Implícitos & No & Si & Si\\
+	\hline
+\end{tabular}}	
+\end{table}
 \end{column}
 \end{columns}
 \end{frame}
@@ -34,7 +59,7 @@ Si & Si\\
 \begin{table}[H]
 \begin{center}
 \small\addtolength{\tabcolsep}{-3pt}
-\scalebox{0.7}{
+\scalebox{0.5}{
 \begin{tabular}{|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
 	\hline
 	{\multirow{2}{*}{\textbf{Item}}}

@@ -14,7 +14,10 @@
 \usepackage{listings}
 \usepackage{multirow}
 \usepackage{caption}  
-% \lstset{escapeinside={<*}{*>}}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{algorithm}
+\lstset{basicstyle=\footnotesize\ttfamily, escapechar={', --} }
 \lstdefinestyle{base}{
   language=java,
   emptylines=0,
@@ -25,6 +28,16 @@
   moredelim=**[is][\color{blue}]{-}{-},
   moredelim=**[is][\color{green}]{<}{>},
   }
+  \lstdefinestyle{base2}{
+  language=java,
+  emptylines=0,
+  breaklines=false,
+  basicstyle=\scriptsize,
+  moredelim=**[is][\color{red}]{@}{@},
+  moredelim=**[is][\color{blue}]{-}{-},
+  moredelim=**[is][\color{green}]{<}{>},
+  }
+  
 \graphicspath{{../imagenes/}}
 %\usepackage[table]{xcolor}
 \begin{document}
@@ -39,7 +52,9 @@
 	%\input{motivacion.tex}
 	\input{problema.tex}
 	\input{propuesta.tex}
+	\input{implementacion.tex}
 	\input{evaluacion.tex}
 	\input{conclusiones.tex}
 	\input{trabajoFut.tex}
+	\input{preguntas.tex}
 \end{document}
