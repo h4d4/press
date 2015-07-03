@@ -12,13 +12,15 @@
 \usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{listings}
-\usepackage{multirow} 
+\usepackage{multirow}
+\usepackage{caption}  
 % \lstset{escapeinside={<*}{*>}}
 \lstdefinestyle{base}{
   language=java,
-  emptylines=1,
-  breaklines=true,
-  basicstyle=\footnotesize,
+  emptylines=0,
+  breaklines=false,
+  basicstyle=\scriptsize,
+  frame=single,
   moredelim=**[is][\color{red}]{@}{@},
   moredelim=**[is][\color{blue}]{-}{-},
   moredelim=**[is][\color{green}]{<}{>},

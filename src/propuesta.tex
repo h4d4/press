@@ -11,7 +11,7 @@
 	\end{block}
 \end{frame}
 
-\subsection{Propuesta}
+\subsection{Propuesta - Generalidades}
 \begin{frame}{Propuesta de solución}
 	\begin{block}{Propuesta}
 		  Proveer una herramienta de análisis de flujo de información mediante el
@@ -43,18 +43,39 @@
 	  \item Cubrir todas las posibles ramas de ejecución en el análisis.
 	  \item Diseñado para aplicativos Java.
 	\end{itemize}
-\column{2in}{Flujos explícitos - Flujos implícitos}
-	
-
+\column{2in}{Flujos: explicitos - implícitos }
+\begin{lstlisting}[style=base][frame=single][caption=First C example]
+	int x,y;
+	x = 1;	
+	y = 4 + x;
+\end{lstlisting}
+\begin{lstlisting}[style=base]
+void foo(a){
+	int x;
+	if(a > 10)
+		x = 1;
+	else
+		x = 2;
+	printf(x);
+}
+\end{lstlisting}
 \end{columns}
+
+
+
+
 \end{frame}
 
-\subsection{Propuesta - especificaciones}
-\begin{frame}{}
+\subsection{Propuesta - Especificaciones}
+\begin{frame}{Política de Seguridad}
 
 \end{frame}
-
-
+\begin{frame}{Anotaciones Propuestas}
+	
+\end{frame}
+\begin{frame}{Anotaciones a la API}
+	
+\end{frame}
 
 
 
